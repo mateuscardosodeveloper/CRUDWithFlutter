@@ -1,3 +1,36 @@
+# Atividade 09/06/2020
+
+Ativida esta dentro do diretório.
+
+```sh
+    < DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS >
+   |
+   |-- android/
+   |
+   |-- atividades/
+   |    |-- 09_06_2021/ #exemplos de 3 funções assíncronas.
+   |        |-- primeiro_exemplo.dart # explicações de Future, await, async e para que serve programação assíncrona.
+   |        |-- segundo_exemplo.dart
+   |        |-- terceiro_exemplo.dart
+   |    
+   |-- ios/
+   |
+   |-- lib/
+   |    |-- app/
+   |        |-- database/
+   |            |script.dart #Definição do script do BD
+   |        |-- views/
+   |    |-- main.dart
+   |
+   |
+   |-- web/
+   |
+   |-- ************************************************************************
+
+
+
+```
+
 # crud_with_flutter
 
 A new Flutter project.
