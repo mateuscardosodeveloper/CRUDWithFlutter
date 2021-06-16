@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   static const HOME = '/';
-  static const CONTACt_FORM = 'contact-form';
+  static const CONTACT_FORM = 'contact-form';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HOME: (context) => ContactList(),
-        CONTACt_FORM: (context) => ContactForm(),
+        CONTACT_FORM: (context) => ContactForm(),
       },
     );
   }
