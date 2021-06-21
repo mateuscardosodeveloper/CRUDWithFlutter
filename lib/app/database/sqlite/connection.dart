@@ -4,12 +4,10 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class Conmection{
-  static Database _db;
   
   static Future<Database> get() async {
-    if(_db == null){
-      var path = join(await getDatabasesPath(), 'banco_contactos');
-      _db = await openDatabase(
+      var path = join(await getDatabasesPath(), 'banco_contactos');      
+      Database _db = await openDatabase(
         path,
         version: 1,
         onCreate: (db,v){
@@ -19,7 +17,6 @@ class Conmection{
           db.execute(insert3);
         }
       );
-    }
     return _db;
   }
 }

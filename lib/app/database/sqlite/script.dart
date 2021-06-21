@@ -1,5 +1,4 @@
 
-
 final createTable = '''
   CREATE TABLE contact(
     id INT NOT NULL PRIMARY KEY

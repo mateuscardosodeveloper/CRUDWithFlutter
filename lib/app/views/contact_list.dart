@@ -29,7 +29,7 @@ class ContactList extends StatelessWidget {
                   ],
                 ),
                 body: ListView.builder(
-                  itemCount: lista.length,
+                  itemCount: lista.lenght,
                   itemBuilder: (context, i) {
                     var contato = lista[i];
                     var avatar = CircleAvatar(
