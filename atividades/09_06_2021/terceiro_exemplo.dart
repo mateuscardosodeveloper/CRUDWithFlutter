@@ -5,11 +5,11 @@ import 'dart:io';
 void main() async {
   print('digite o primeiro número: ');
   var entradaPrimeiroValor = stdin.readLineSync();
-  var primeiroValor = double.parse(entradaPrimeiroValor!);
+  var primeiroValor = double.parse(entradaPrimeiroValor);
 
   print('digite o Segundo número: ');
   var entradaSegundoValor = stdin.readLineSync();
-  var segundoValor = double.parse(entradaSegundoValor!);
+  var segundoValor = double.parse(entradaSegundoValor);
 
   print('');
   print('Multiplicação:');

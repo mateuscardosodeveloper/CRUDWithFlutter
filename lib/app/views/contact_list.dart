@@ -6,7 +6,7 @@ import '../my_app.dart';
 
 class ContactList extends StatelessWidget {
   Future<List<Map<String, dynamic>>> _buscar() async {
-    Database _db = await Conmection.get();
+    Database _db = await Connection.get();
     return _db.query('contact');
   }
 
@@ -29,7 +29,7 @@ class ContactList extends StatelessWidget {
                   ],
                 ),
                 body: ListView.builder(
-                  itemCount: lista.lenght,
+                  itemCount: lista.length,
                   itemBuilder: (context, i) {
                     var contato = lista[i];
                     var avatar = CircleAvatar(
