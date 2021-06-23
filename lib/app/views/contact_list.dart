@@ -1,13 +1,13 @@
-import 'package:crud_with_flutter/app/database/sqlite/connection.dart';
+import 'package:crud_with_flutter/app/database/sqlite/dao/contact_dao_implement.dart';
+import 'package:crud_with_flutter/app/domain/entities/contact.dart';
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
+
 
 import '../my_app.dart';
 
 class ContactList extends StatelessWidget {
-  Future<List<Map<String, dynamic>>> _buscar() async {
-    Database _db = await Connection.get();
-    return _db.query('contact');
+  Future<List<Contact>> _buscar() async {
+    return ContactDAOImplement().find();
   }
 
   @override
@@ -16,7 +16,7 @@ class ContactList extends StatelessWidget {
         future: _buscar(),
         builder: (context, futuro) {
           if (futuro.hasData) {
-            var lista = futuro.data;
+            List<Contact> lista = futuro.data;
             return Scaffold(
                 appBar: AppBar(
                   title: Text('Lista de Contatos'),
@@ -33,12 +33,12 @@ class ContactList extends StatelessWidget {
                   itemBuilder: (context, i) {
                     var contato = lista[i];
                     var avatar = CircleAvatar(
-                      backgroundImage: NetworkImage(contato['url_avatar']),
+                      backgroundImage: NetworkImage(contato.urlAvatar),
                     );
                     return ListTile(
                       leading: avatar,
-                      title: Text(contato['nome']),
-                      subtitle: Text(contato['telefone']),
+                      title: Text(contato.nome),
+                      subtitle: Text(contato.telefone),
                       trailing: Container(
                         width: 100,
                         child: Row(
