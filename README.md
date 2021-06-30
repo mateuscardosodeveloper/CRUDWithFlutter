@@ -12,15 +12,14 @@ Ativida esta dentro do diretório.
    |        |-- primeiro_exemplo.dart # explicações de Future, await, async e para que serve programação assíncrona.
    |        |-- segundo_exemplo.dart
    |        |-- terceiro_exemplo.dart
+   |    | -- 30_06_2021/ # texto explicativo da injeção de dependências e camada de domínio
+   |        |-- camada_dominio.md
+   |        |-- injecao_dependecia.md
    |    
    |-- ios/
    |
    |-- lib/
-   |    |-- app/
-   |        |-- database/
-   |            |script.dart #Definição do script do BD
-   |        |-- views/
-   |    |-- main.dart
+   |    |-- app/ # arquivos do projeto.
    |
    |
    |-- web/
