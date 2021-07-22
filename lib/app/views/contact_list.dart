@@ -3,48 +3,46 @@ import 'package:crud_with_flutter/app/views/contact_list_back.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-
 import '../my_app.dart';
 
 class ContactList extends StatelessWidget {
   final _back = ContactListBack();
 
-  CircleAvatar circleAvatar(String url){
-    return(Uri.tryParse(url).isAbsolute)?
-      CircleAvatar(backgroundImage: NetworkImage(url))
-      : CircleAvatar(child: Icon(Icons.person));
+  CircleAvatar circleAvatar(String url) {
+    return (Uri.tryParse(url).isAbsolute)
+        ? CircleAvatar(backgroundImage: NetworkImage(url))
+        : CircleAvatar(child: Icon(Icons.person));
   }
 
-  Widget iconEditButton(Function onPressed){
-    return IconButton(icon: Icon(Icons.edit), color: Colors.orange, onPressed: onPressed);
-  }
-
-Widget iconRemoveButton(BuildContext context, Function remove){
+  Widget iconEditButton(Function onPressed) {
     return IconButton(
-      icon: Icon(Icons.delete), 
-      color: Colors.red, 
-      onPressed: () {
-        showDialog(
-          context: context, 
-          builder:  (context) => AlertDialog(
-            title: Text('Excluir'),
-            content: Text('Confirma a Exclusão?'),
-            actions: [
-              TextButton(
-                child: Text('Não'), 
-                onPressed: (){
-                  Navigator.of(context).pop();
-                },
-              ),
-              TextButton(
-                child: Text('Sim'),
-                onPressed: remove,
-              ),
-            ],
-          )
-        );
-      }
-    );
+        icon: Icon(Icons.edit), color: Colors.orange, onPressed: onPressed);
+  }
+
+  Widget iconRemoveButton(BuildContext context, Function remove) {
+    return IconButton(
+        icon: Icon(Icons.delete),
+        color: Colors.red,
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                    title: Text('Excluir'),
+                    content: Text('Confirma a Exclusão?'),
+                    actions: [
+                      TextButton(
+                        child: Text('Não'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: Text('Sim'),
+                        onPressed: remove,
+                      ),
+                    ],
+                  ));
+        });
   }
 
   @override
@@ -76,15 +74,18 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                       return ListTile(
                         leading: circleAvatar(contato.urlAvatar),
                         title: Text(contato.nome),
+                        onTap: () {
+                          _back.goToDetails(context, contato);
+                        },
                         subtitle: Text(contato.telefone),
                         trailing: Container(
                           width: 100,
                           child: Row(
                             children: [
-                              iconEditButton((){
-                                _back.goToForm(context, contato);
+                              iconEditButton(() {
+                                _back.goToForm(context);
                               }),
-                              iconRemoveButton(context, (){
+                              iconRemoveButton(context, () {
                                 _back.remove(contato.id);
                                 Navigator.of(context).pop();
                               })
