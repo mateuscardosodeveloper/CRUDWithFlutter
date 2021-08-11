@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "515474330122",
+    "project_id": "agenda-9395f",
+    "storage_bucket": "agenda-9395f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515474330122:android:dda0d3fe1f1c946d6fc5f3",
+        "android_client_info": {
+          "package_name": "br.com.raiizoor.crud_with_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515474330122-vo8la603vu6s4cd4nekhpkg6vkppp2tq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0YS6FnXHo7YRn4UErGt3Fj8vYKz8Ja-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515474330122-vo8la603vu6s4cd4nekhpkg6vkppp2tq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
